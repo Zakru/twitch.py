@@ -68,6 +68,12 @@ class Bot:
 			self.loop.close()
 	
 	def parse_commands(self, message):
+		"""
+		Checks if the first part (separated by spaces) of a
+		message (command 'name') without command_prefix is in
+		the _commands list. If a key of that name is present,
+		runs the function in that index.
+		"""
 		command = message.content[1:].split('!')[0]
 		parts = command.split(' ')
 		name = parts[0]
@@ -98,7 +104,13 @@ class Bot:
 			return self._events[event](*args, **kwargs)
 	
 	def command(self, func):
+		"""
+		Decorator for adding commands to the _commands list
+		"""
 		self._commands[func.__name__] = func
 	
 	def send_message(self, message):
+		"""
+		Simplified call of _socket.send_message()
+		"""
 		self._socket.send_message(message)
