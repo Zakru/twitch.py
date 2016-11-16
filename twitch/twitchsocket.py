@@ -16,7 +16,9 @@ class ReceivedData():
 		self.user = user
 
 class MessageData():
-	
+	"""
+	Class used to contain a message's text and sender's name
+	"""
 	content = ""
 	user = ""
 	
