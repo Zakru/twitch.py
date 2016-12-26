@@ -15,6 +15,6 @@ __title__ = 'twitch'
 __author__ = 'Zakru'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2016 Zakru'
-__version__ = '0.1'
+__version__ = '0.1.1'
 
 from .bot import Bot
